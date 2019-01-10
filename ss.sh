@@ -25,5 +25,5 @@ cat >/etc/shadowsocks.json <<EOF
 EOF
 
 ssserver -c /etc/shadowsocks.json -d start
-apt–get install python–m2crypto
+apt-get install python-m2crypto
 echo -e 'nohup /usr/local/bin/ssserver -c /etc/shadowsocks.json >/dev/null 2>&1 &\n' >> /etc/rc.local
