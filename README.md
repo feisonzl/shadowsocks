@@ -4,9 +4,9 @@ $sudo ./ss.sh
 
 2.开机启动服务配置
 方法一：
-# echo -e 'nohup /usr/local/bin/ssserver -c /etc/shadowsocks.json -d start' >> /etc/rc.local
+$sudo echo -e 'nohup /usr/local/bin/ssserver -c /etc/shadowsocks.json -d start' >> /etc/rc.local
 方法二：
-# vi /etc/systemd/system/shadowsocks-server.service
+$sudo vi /etc/systemd/system/shadowsocks-server.service
 [Unit]
 Description=Shadowsocks Server
 After=network.target
@@ -19,5 +19,5 @@ ExecStart=/usr/local/bin/ssserver -c /etc/shadowsocks.json -d start
 [Install]
 WantedBy=multi-user.target
 
-#systemctl daemon-reload
-#systemctl start shadowsocks-server.service
+$sudo systemctl daemon-reload
+$sudo systemctl start shadowsocks-server.service

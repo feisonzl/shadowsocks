@@ -5,6 +5,7 @@ then
 fi
 echo "download&install shadowsocks-------"
 apt-get update
+apt-get install python-m2crypto
 apt-get -y install python-pip||{
 	echo "install python-pip error"
 	exit 1
@@ -25,5 +26,4 @@ cat >/etc/shadowsocks.json <<EOF
 EOF
 
 ssserver -c /etc/shadowsocks.json -d start
-apt-get install python-m2crypto
 echo -e 'nohup /usr/local/bin/ssserver -c /etc/shadowsocks.json >/dev/null 2>&1 &\n' >> /etc/rc.local
